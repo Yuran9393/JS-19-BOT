@@ -7,8 +7,15 @@ function guessNumber(){
 
 let num = prompt('Угадай число от 1 до 100');
 
+function randomInteger(min, max) {
+    let rand = min + Math.random() * (max - min + 1);
+    return Math.round(rand);
+  }
+
    function chcheckingIf(){
-    if ( num > 100){
+    if ( randomInteger(1,100) === +num ) {
+        alert('Поздравляю, Вы угадали!!!');
+    } else if ( num > 100 ){
         alert('Загаданное число меньше');
         return guessNumber();
     } else if ( num === null ){
@@ -21,9 +28,7 @@ let num = prompt('Угадай число от 1 до 100');
     } else if ( num < 1 ){
         alert('Загаданное число больше');
         return guessNumber();
-    } else {
-        alert('Поздравляю, Вы угадали!!!');
-    }
+    } 
     }
     return chcheckingIf();
 }
