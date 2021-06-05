@@ -6,26 +6,24 @@ let isNumber = function(n){
 function guessNumber(){
 const randomNum = 27;
 
-   function chcheckingIf(){
+   function checkingIf(){
     let num = prompt('Угадай число от 1 до 100');
     
-    if ( randomNum === +num ) {
-        alert('Поздравляю, Вы угадали!!!');
-    } else if ( num > randomNum ){
-        alert('Загаданное число меньше');
-        return chcheckingIf();
-    } else if ( num === null ){
+    if ( num === null ){
         alert('Игра окончена');
     } else if ( !isNumber(num) ){
         alert('Введи число!');
-        return chcheckingIf();
-    } else if ( num === null ){
-        alert('Игра окончена');
+        return checkingIf();
     } else if ( num < randomNum ){
         alert('Загаданное число больше');
-        return chcheckingIf();
-    } 
+        return checkingIf();
+    } else if ( num > randomNum ){
+        alert('Загаданное число меньше');
+        return checkingIf();
+    } else if ( randomNum === +num ) {
+        alert('Поздравляю, Вы угадали!!!');
     }
-    return chcheckingIf();
+}
+    return checkingIf();
 }
 guessNumber();
